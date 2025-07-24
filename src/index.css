@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background: #000;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Enhanced 3D Animations */
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateZ(20px) rotateY(90deg);
+  }
+  50% {
+    transform: translateY(-30px) translateZ(40px) rotateY(180deg);
+  }
+  75% {
+    transform: translateY(-15px) translateZ(20px) rotateY(270deg);
+  }
+}
+
+@keyframes confetti-3d {
+  0% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotateX(720deg) rotateY(360deg) rotateZ(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes twinkle-bright {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotateZ(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotateZ(180deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(147, 51, 234, 0.5);
+  }
+}
+
+@keyframes glow-intense {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(253, 224, 71, 0.8), 0 0 60px rgba(236, 72, 153, 0.6), 0 0 90px rgba(147, 51, 234, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 50px rgba(253, 224, 71, 1), 0 0 100px rgba(236, 72, 153, 0.8), 0 0 150px rgba(147, 51, 234, 0.6);
+  }
+}
+
+@keyframes glow-text {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 50px rgba(236, 72, 153, 0.8);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(147, 51, 234, 0.5);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-rays {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up-delay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up-delay-2 {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes celebration {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-2deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+@keyframes flame-dance {
+  0%, 100% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  25% {
+    transform: scale(1.4) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(-3deg);
+  }
+  75% {
+    transform: scale(1.5) rotate(5deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.animate-float-3d {
+  animation: float-3d 4s ease-in-out infinite;
+}
+
+.animate-confetti-3d {
+  animation: confetti-3d 3s linear infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-twinkle-bright {
+  animation: twinkle-bright 1.5s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-glow-intense {
+  animation: glow-intense 2s ease-in-out infinite;
+}
+
+.animate-glow-text {
+  animation: glow-text 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-spin-rays {
+  animation: spin-rays 6s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 1s ease-out 0.3s both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 1s ease-out 0.6s both;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 1.5s ease-out;
+}
+
+.animate-celebration {
+  animation: celebration 0.6s ease-in-out;
+}
+
+.animate-flame-flicker {
+  animation: flame-flicker 1s ease-in-out infinite;
+}
+
+.animate-flame-dance {
+  animation: flame-dance 0.5s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s ease-out infinite;
+}
+
+/* 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.rotate-x-5 {
+  transform: rotateX(5deg);
+}
+
+.rotate-x-0 {
+  transform: rotateX(0deg);
+}
+
+.rotate-y-3 {
+  transform: rotateY(3deg);
+}
+
+.rotate-y-6 {
+  transform: rotateY(6deg);
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+.rotate-y-[-6deg] {
+  transform: rotateY(-6deg);
+}
+
+.rotate-y-[-12deg] {
+  transform: rotateY(-12deg);
+}
+
+/* Enhanced scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #db2777, #7c3aed);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
